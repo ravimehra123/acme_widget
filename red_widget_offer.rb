@@ -1,4 +1,4 @@
-class RedWidgetOffer
+class RedWidgetOffer < OfferStrategy
   def applies_to?(product_code)
     product_code == "R01"
   end

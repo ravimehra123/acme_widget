@@ -3,6 +3,7 @@ require_relative "product"
 require_relative "delivery_rule"
 require_relative "basket"
 require_relative "red_widget_offer"
+require_relative "offer_strategy"
 
 catalogue = {
   "R01" => Product.new(code: "R01", name: "Red Widget", price: 32.95),
