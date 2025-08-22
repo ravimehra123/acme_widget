@@ -3,7 +3,7 @@ require_relative "product"
 require_relative "delivery_rule"
 require_relative "basket"
 require_relative "red_widget_offer"
-require_relative "offer_strategy"
+require_relative "delivery_calculator"
 
 catalogue = {
   "R01" => Product.new(code: "R01", name: "Red Widget", price: 32.95),
@@ -20,6 +20,11 @@ delivery_calculator = DeliveryCalculator.new(rules)
 
 # Setup offers
 offers = [RedWidgetOffer.new]
+
+def run_example(items, basket)
+  items.each { |code| basket.add(code) }
+  puts "#{items.join(', ')} => #{basket.total}"
+end
 
 # Initialize basket/cart
 basket = Basket.new(catalogue: catalogue, delivery_calculator: delivery_calculator, offers: offers)
