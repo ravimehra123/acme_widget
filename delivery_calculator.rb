@@ -1,6 +1,6 @@
 class DeliveryCalculator
   def initialize(rules)
-    @rules = rules.sort_by { |r| r.instance_variable_get(:@threshold) }
+    @rules = rules.sort_by { |rule| rule.instance_variable_get(:@threshold) }
   end
 
   def calculate(subtotal)

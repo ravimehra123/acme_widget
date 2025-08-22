@@ -22,10 +22,10 @@ class Basket
 
   def calculate_subtotal
     counts = @items.each_with_object(Hash.new(0)) { |code, h| h[code] += 1 }
-    counts.reduce(0.0) do |sum, (code, qty)|
+    counts.reduce(0.0) do |sum, (code, quantity)|
       price = @catalogue[code].price
-      strategy = @offers.find { |o| o.applies_to?(code) }
-      sum + (strategy ? strategy.apply(price, qty) : price * qty)
+      strategy = @offers.find { |offer| offer.applies_to?(code) }
+      sum + (strategy ? strategy.apply(price, quantity) : price * quantity)
     end
   end
 end

@@ -3,7 +3,7 @@ class OfferStrategy
     false
   end
 
-  def apply(price, qty)
-    price * qty
+  def apply(price, quantity)
+    price * quantity
   end
 end
