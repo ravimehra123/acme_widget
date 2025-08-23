@@ -1,4 +1,6 @@
 class DeliveryRule
+  attr_reader :threshold
+
   def initialize(threshold:, charge:)
     @threshold = threshold
     @charge = charge
